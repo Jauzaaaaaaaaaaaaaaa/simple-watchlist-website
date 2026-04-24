@@ -1,7 +1,9 @@
+/* Selector universal ini digunakan agar seluruh elemen memakai box-sizing border-box. */
 * {
     box-sizing: border-box;
 }
 
+/* Body digunakan untuk mengatur tampilan dasar seluruh halaman website. */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -9,6 +11,7 @@ body {
     color: #1f2937;
 }
 
+/* auth-body digunakan untuk memusatkan card login ke tengah halaman. */
 .auth-body {
     min-height: 100vh;
     display: flex;
@@ -17,6 +20,7 @@ body {
     padding: 24px;
 }
 
+/* Ketiga class ini dipakai untuk membuat card berwarna putih dengan sudut membulat. */
 .auth-card,
 .form-card,
 .table-card {
@@ -25,30 +29,36 @@ body {
     box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
+/* auth-card digunakan khusus untuk kotak login. */
 .auth-card {
     width: 100%;
     max-width: 430px;
     padding: 32px;
 }
 
+/* form-card digunakan untuk memberi ruang dalam card form tambah dan edit. */
 .form-card {
     padding: 28px;
 }
 
+/* table-card digunakan untuk membungkus tabel agar terlihat rapi. */
 .table-card {
     padding: 8px 0;
 }
 
+/* page-wrap digunakan untuk memberi lebar maksimal dan menambah jarak dari atas halaman. */
 .page-wrap {
     max-width: 1100px;
     margin: 56px auto;
     padding: 0 20px;
 }
 
+/* narrow digunakan agar form tambah dan edit tidak terlalu lebar. */
 .page-wrap.narrow {
     max-width: 720px;
 }
 
+/* topbar digunakan untuk menata judul dan tombol aksi di halaman utama. */
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -57,28 +67,33 @@ body {
     margin-bottom: 22px;
 }
 
+/* topbar-actions digunakan untuk mengatur jarak antar tombol di kanan atas. */
 .topbar-actions {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
 
+/* h1 digunakan untuk mengatur jarak bawah judul utama. */
 h1 {
     margin: 0 0 18px;
     color: #111827;
 }
 
+/* subtitle digunakan untuk teks pendukung di bawah judul. */
 .subtitle {
     margin: 0;
     color: #6b7280;
 }
 
+/* label digunakan agar judul field terlihat jelas di atas input. */
 label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
 }
 
+/* input dan select digunakan untuk merapikan kotak isian form. */
 input,
 select {
     width: 100%;
@@ -90,17 +105,20 @@ select {
     background: #fff;
 }
 
+/* Efek focus ini digunakan agar input terlihat aktif saat diklik user. */
 input:focus,
 select:focus {
     border-color: #4f46e5;
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
 }
 
+/* form-grid digunakan untuk memberi jarak antar field form. */
 .form-grid {
     display: grid;
     gap: 18px;
 }
 
+/* form-actions digunakan untuk menata tombol kembali dan simpan/update. */
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -108,6 +126,7 @@ select:focus {
     margin-top: 14px;
 }
 
+/* btn adalah style dasar semua tombol dan link tombol. */
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -119,39 +138,47 @@ select:focus {
     transition: 0.2s ease;
 }
 
+/* hover ini memberi efek tombol sedikit terangkat saat disentuh mouse. */
 .btn:hover {
     transform: translateY(-1px);
 }
 
+/* primary digunakan untuk tombol utama seperti Login, Simpan, dan Update. */
 .btn.primary {
     background: #4f46e5;
     color: #fff;
 }
 
+/* secondary digunakan untuk tombol pendamping seperti Kembali dan Logout. */
 .btn.secondary {
     background: #e5e7eb;
     color: #111827;
 }
 
+/* warning digunakan untuk tombol Edit. */
 .btn.warning {
     background: #f59e0b;
     color: #fff;
 }
 
+/* danger digunakan untuk tombol Hapus. */
 .btn.danger {
     background: #ef4444;
     color: #fff;
 }
 
+/* small digunakan untuk mengecilkan tombol di area tabel. */
 .btn.small {
     padding: 8px 12px;
     font-size: 13px;
 }
 
+/* full digunakan agar tombol login memenuhi lebar card. */
 .btn.full {
     width: 100%;
 }
 
+/* alert adalah style dasar untuk pesan informasi di halaman login. */
 .alert {
     padding: 12px 14px;
     border-radius: 10px;
@@ -159,16 +186,19 @@ select:focus {
     font-weight: 600;
 }
 
+/* alert error digunakan untuk pesan gagal login. */
 .alert.error {
     background: #fee2e2;
     color: #b91c1c;
 }
 
+/* alert success digunakan untuk pesan logout berhasil. */
 .alert.success {
     background: #dcfce7;
     color: #166534;
 }
 
+/* auth-hint digunakan untuk kotak informasi akun default di halaman login. */
 .auth-hint {
     margin-top: 16px;
     padding: 14px;
@@ -178,20 +208,24 @@ select:focus {
     font-size: 14px;
 }
 
+/* overflow hidden digunakan agar isi tabel tetap rapi di dalam card. */
 .table-card {
     overflow: hidden;
 }
 
+/* table digunakan agar tabel memenuhi lebar card. */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
+/* thead memberi warna gelap pada kepala tabel. */
 thead {
     background: #111827;
     color: #ffffff;
 }
 
+/* th dan td mengatur jarak isi sel tabel. */
 th,
 td {
     padding: 14px 16px;
@@ -199,10 +233,12 @@ td {
     border-bottom: 1px solid #e5e7eb;
 }
 
+/* hover baris tabel digunakan agar data lebih nyaman dibaca saat diarahkan mouse. */
 tbody tr:hover {
     background: #f9fafb;
 }
 
+/* badge digunakan untuk menandai tipe film atau series dengan bentuk kapsul. */
 .badge {
     display: inline-block;
     background: #ede9fe;
@@ -213,38 +249,9 @@ tbody tr:hover {
     font-weight: 700;
 }
 
+/* actions digunakan untuk memberi jarak tombol Edit dan Hapus. */
 .actions {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-}
-
-.empty {
-    text-align: center;
-    color: #6b7280;
-}
-
-@media (max-width: 768px) {
-    .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    th,
-    td {
-        padding: 12px 10px;
-        font-size: 14px;
-    }
-}
-
-
-.form-card h1,
-.form-card .subtitle {
-    padding-left: 2px;
-}
-
-@media (max-width: 768px) {
-    .form-card {
-        padding: 22px 18px;
-    }
 }

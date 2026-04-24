@@ -1,4 +1,7 @@
-<?php require 'auth.php'; ?>
+<?php
+// auth.php dipanggil agar hanya user yang sudah login yang bisa membuka form tambah.
+require 'auth.php';
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -8,9 +11,11 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <!-- page-wrap narrow digunakan agar form tidak terlalu lebar. -->
     <div class="page-wrap narrow">
         <div class="form-card">
             <h1>Tambah Data Watchlist</h1>
+            <!-- Form ini digunakan untuk mengirim data baru ke file simpan.php. -->
             <form action="simpan.php" method="POST" class="form-grid">
                 <div>
                     <label for="judul">Judul</label>
