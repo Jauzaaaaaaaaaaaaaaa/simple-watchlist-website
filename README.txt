@@ -1,6 +1,8 @@
-WATCHLIST WEBSITE - UJK PHP NATIVE
+WATCHLIST WEBSITE
 
 File ini digunakan untuk memberi penjelasan singkat tentang project.
+
+Website yang bertujuan untuk menyimpan film dan series yang sudah ditonton, belum ditonton, dan sedang ditonton.
 
 Akun login default:
 Email    : admin@gmail.com

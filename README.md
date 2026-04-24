@@ -1,3 +1,3 @@
-# simple-watchlist-website
-
-Dokumen ini digunakan sebagai identitas singkat repository GitHub project watchlist.
+Nama : Jauza Kenar Indra Fawaid
+NIM : 220103095
+Kelas : TI22A3
