@@ -2,7 +2,7 @@ WATCHLIST WEBSITE
 
 File ini digunakan untuk memberi penjelasan singkat tentang project.
 
-Website yang bertujuan untuk menyimpan film dan series yang sudah ditonton, belum ditonton, dan sedang ditonton.
+Tema kasus yang saya pilih adalah Watchlist Film / Series. Sistem ini dibuat untuk membantu pengguna menyimpan daftar film atau series yang ingin ditonton. Pengguna dapat menambahkan, melihat, mengubah, dan menghapus data watchlist setelah berhasil login. Selain itu, pengguna juga dapat memberikan nilai dari 1 sampai 10 untuk film atau series yang sudah ditonton atau sedang ditonton. Jika film atau series belum ditonton, maka rating masih bernilai 0. Sistem ini dibuat agar data tontonan bisa tersimpan dengan rapi dan lebih mudah dikelola.
 
 Akun login default:
 Email    : admin@gmail.com
