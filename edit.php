@@ -1,11 +1,16 @@
 <?php
+// File ini digunakan untuk menampilkan form edit berdasarkan id data yang dipilih.
 require 'auth.php';
 require 'koneksi.php';
 
+// Mengambil id dari URL lalu diubah menjadi integer untuk keamanan dasar.
 $id = (int)($_GET['id'] ?? 0);
+
+// Query ini digunakan untuk mengambil satu data movie sesuai id.
 $result = mysqli_query($conn, "SELECT * FROM movies WHERE id = $id");
 $data = mysqli_fetch_assoc($result);
 
+// Jika data tidak ditemukan, user diarahkan kembali ke index.
 if (!$data) {
     header('Location: index.php');
     exit;
@@ -23,7 +28,9 @@ if (!$data) {
     <div class="page-wrap narrow">
         <div class="form-card">
             <h1>Edit Data Watchlist</h1>
+            <!-- Form ini digunakan untuk mengirim data hasil edit ke update.php. -->
             <form action="update.php" method="POST" class="form-grid">
+                <!-- Input hidden ini digunakan untuk membawa id data yang sedang diedit. -->
                 <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
                 <div>
                     <label for="judul">Judul</label>
