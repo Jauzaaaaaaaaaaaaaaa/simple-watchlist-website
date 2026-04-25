@@ -1,12 +1,14 @@
-WATCHLIST WEBSITE
-
-File ini digunakan untuk memberi penjelasan singkat tentang project.
-
-Tema kasus yang saya pilih adalah Watchlist Film / Series. Sistem ini dibuat untuk membantu pengguna menyimpan daftar film atau series yang ingin ditonton. Pengguna dapat menambahkan, melihat, mengubah, dan menghapus data watchlist setelah berhasil login. Selain itu, pengguna juga dapat memberikan nilai dari 1 sampai 10 untuk film atau series yang sudah ditonton atau sedang ditonton. Jika film atau series belum ditonton, maka rating masih bernilai 0. Sistem ini dibuat agar data tontonan bisa tersimpan dengan rapi dan lebih mudah dikelola.
+WATCHLIST WEBSITE - UJK PHP NATIVE
 
 Akun login default:
 Email    : admin@gmail.com
 Password : admin123
+
+Fitur utama:
+1. Login dan logout admin.
+2. CRUD data watchlist film/series.
+3. CRUD tabel tambahan: platforms.
+4. Data watchlist terhubung ke tabel platforms melalui kolom platform_id.
 
 Cara menjalankan:
 1. Extract folder project ke C:\xampp\htdocs\watchlist_website_ujk
@@ -14,3 +16,8 @@ Cara menjalankan:
 3. Buka phpMyAdmin
 4. Import file database.sql
 5. Buka http://localhost/watchlist_website_ujk/login.php
+
+Catatan pengerjaan tambahan:
+- Tabel baru yang ditambahkan adalah platforms.
+- Halaman CRUD platform ada di platforms.php.
+- Menu Kelola Platform sudah terhubung dari halaman index.php.
