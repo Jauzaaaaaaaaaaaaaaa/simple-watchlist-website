@@ -1,22 +1,27 @@
-# Simple Watchlist Website
+# Watchlist Film
 
-Project PHP native untuk mengelola watchlist film dan series.
+Daftar tontonan PHP dan MySQL dengan relasi platform.
 
-## Update tugas
+**Demo:** https://portofolio-jauza-fawaid.netlify.app/WATCHLIST-FILM/ (pratinjau statis dengan data contoh)
 
-- Menambahkan tabel `platforms` pada database.
-- Menambahkan CRUD lengkap untuk data platform streaming.
-- Menghubungkan tabel `movies` dengan `platforms` menggunakan `platform_id`.
-- Menambahkan pilihan platform pada form tambah dan edit watchlist.
+![Tampilan Watchlist Film](docs/tampilan.jpg)
 
-## Akun default
+## Fitur
 
-- Email: `admin@gmail.com`
-- Password: `admin123`
+- Login dengan kata sandi ter-hash
+- CRUD film dan series, serta CRUD platform streaming
+- Relasi `movies` dan `platforms`
+- Token CSRF untuk login dan hapus
+- Pencarian tabel dan ekspor CSV
 
-## Cara menjalankan
+## Menjalankan
 
-1. Pindahkan folder project ke `C:\xampp\htdocs\watchlist_website_ujk`.
-2. Jalankan Apache dan MySQL di XAMPP.
-3. Import `database.sql` melalui phpMyAdmin.
-4. Buka `http://localhost/watchlist_website_ujk/login.php`.
+1. Salin folder ini ke `htdocs`, lalu jalankan Apache dan MySQL di XAMPP.
+2. Impor `database.sql` lewat phpMyAdmin. Berkas ini membuat database `watchlist_ujk`.
+3. Buka `login.php`. Akun demo ada di `database.sql`, ganti sebelum dipasang di server.
+
+Pengaturan koneksi bisa diubah lewat variabel lingkungan `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, dan `DB_PASS`.
+
+## Teknologi
+
+PHP, MySQL, JavaScript

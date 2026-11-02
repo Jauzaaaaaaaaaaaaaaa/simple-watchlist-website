@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once __DIR__ . '/security.php';
+require_post_csrf();
 require 'koneksi.php';
 
 $email = trim($_POST['email'] ?? '');
@@ -17,6 +18,7 @@ $result = mysqli_stmt_get_result($stmt);
 $user = mysqli_fetch_assoc($result);
 
 if ($user && password_verify($password, $user['password'])) {
+    session_regenerate_id(true);
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['user_name'] = $user['name'];
     $_SESSION['user_email'] = $user['email'];

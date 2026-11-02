@@ -17,6 +17,11 @@ $result = mysqli_query($conn, '
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Platform Streaming</title>
     <link rel="stylesheet" href="assets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="atelier/atelier.css">
+<link rel="stylesheet" href="atelier/theme.css">
+<script src="atelier/theme.js"></script>
+<script src="atelier/atelier.js"></script>
 </head>
 <body>
     <div class="page-wrap">
@@ -65,7 +70,7 @@ $result = mysqli_query($conn, '
                                 <td><span class="badge"><?php echo (int)$row['total_watchlist']; ?> data</span></td>
                                 <td class="actions">
                                     <a class="btn small warning" href="platform_edit.php?id=<?php echo $row['id']; ?>">Edit</a>
-                                    <a class="btn small danger" href="platform_hapus.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Yakin ingin menghapus platform ini? Watchlist yang memakai platform ini akan menjadi Belum dipilih.');">Hapus</a>
+                                    <form action="platform_hapus.php" method="POST" class="del-form" onsubmit="return confirm('Yakin ingin menghapus platform ini? Watchlist yang memakai platform ini akan menjadi Belum dipilih.')"><?php echo csrf_field(); ?><input type="hidden" name="id" value="<?php echo (int) $row['id']; ?>"><button type="submit" class="btn small danger">Hapus</button></form>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

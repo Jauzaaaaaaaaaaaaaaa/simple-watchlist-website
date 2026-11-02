@@ -1,0 +1,69 @@
+/* WATCHLIST FILM: bioskop. Beludru merah, lubang pita film, tiket, butiran seluloid. */
+:root { --film: #0b0807; --film-2: #171110; --velvet: #a3131e; --amber: #f2b632; --bone: #f4ead8; --dim: #a8988a; --hair: rgba(244, 234, 216, .16);
+  --at-accent: #171110; --at-on-accent: #f4ead8; --at-deep: #a3131e; --at-mono: "Bebas Neue", sans-serif; }
+html { background: var(--film); }
+body, body.at { font-family: "Playfair Display", Georgia, serif !important; color: var(--bone) !important; background: radial-gradient(90% 60% at 50% -10%, rgba(163, 19, 30, .38), transparent 70%), var(--film) !important; background-attachment: fixed !important; }
+/* Lubang pita film di kedua sisi */
+.wl-strip { position: fixed; top: 0; bottom: 0; width: 34px; z-index: 5; pointer-events: none; background: #000 repeating-linear-gradient(transparent 0 14px, #2a211c 14px 36px, transparent 36px 46px) center / 16px 46px repeat-y; }
+.wl-strip--l { left: 0; } .wl-strip--r { right: 0; }
+@media (max-width: 700px) { .wl-strip { width: 16px; background-size: 8px 30px; } }
+.wl-grain { position: fixed; inset: -50%; z-index: 6; pointer-events: none; opacity: .09; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation: wl-grain 1s steps(5) infinite; }
+@keyframes wl-grain { 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -4%); } 75% { transform: translate(-1%, 3%); } }
+
+/* Hitung mundur film */
+.at-curtain__a, .at-curtain__b { border-radius: 0; inset: 0; }
+.wl-lead { position: relative; width: min(60vw, 300px); aspect-ratio: 1; display: grid; place-items: center; color: #f4ead8; }
+.wl-lead::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(rgba(244, 234, 216, .34) var(--a, 0deg), transparent 0); animation: wl-sweep .55s linear 3; }
+.wl-lead::after { content: ""; position: absolute; inset: 6%; border-radius: 50%; box-shadow: 0 0 0 2px #f4ead8, inset 0 0 0 2px #f4ead8; background: linear-gradient(#f4ead8, #f4ead8) center / 100% 1px no-repeat, linear-gradient(#f4ead8, #f4ead8) center / 1px 100% no-repeat; }
+@property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes wl-sweep { to { --a: 360deg; } }
+.wl-lead b { position: relative; z-index: 1; font: 400 clamp(6rem, 22vw, 11rem)/1 "Bebas Neue", sans-serif; }
+.wl-lead b::before { content: "3"; animation: wl-count 1.65s steps(1) forwards; }
+@keyframes wl-count { 0% { content: "3"; } 33% { content: "2"; } 66% { content: "1"; } }
+.at-curtain__cap { color: #f4ead8; letter-spacing: .3em; }
+
+/* Papan judul */
+.page-wrap { position: relative; z-index: 1; max-width: 1280px; padding: clamp(30px, 6vh, 70px) clamp(44px, 6vw, 80px); }
+h1, h2, h3 { font-family: "Bebas Neue", Impact, sans-serif; font-weight: 400; letter-spacing: .015em; color: var(--bone); }
+.topbar { align-items: flex-end; flex-wrap: wrap; gap: 22px; border-bottom: 1px solid var(--hair); padding-bottom: 26px; background: transparent; box-shadow: none; }
+.topbar h1 { font-size: clamp(3.2rem, 9.5vw, 8.5rem); line-height: .9; margin: 0; }
+.subtitle { color: var(--dim); font-style: italic; font-size: 1.08rem; }
+
+.btn { border-radius: 2px; font-family: "Bebas Neue", sans-serif !important; font-weight: 400; font-size: 1.12rem; letter-spacing: .08em; border: 0; transition: transform .35s var(--at-out), background-color .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: var(--velvet); color: var(--bone); }
+.btn.info { background: var(--amber); color: #1a1208; }
+.btn.secondary { background: transparent; color: var(--bone); box-shadow: inset 0 0 0 1px var(--hair); }
+.btn.warning { background: transparent; color: var(--amber); box-shadow: inset 0 0 0 1px var(--amber); }
+.btn.danger { background: transparent; color: #ff6b75; box-shadow: inset 0 0 0 1px #ff6b75; }
+
+/* Tabel jadwal tayang */
+.table-card { background: transparent; box-shadow: none; border-radius: 0; border: 0; margin-top: 26px; }
+table { background: transparent; color: var(--bone); }
+th { background: transparent !important; color: var(--amber) !important; font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 1.06rem; letter-spacing: .14em; border-bottom: 2px solid var(--amber) !important; }
+td { border-bottom: 1px dashed var(--hair) !important; color: var(--bone); }
+tbody tr { transition: background-color .25s; }
+tbody tr:hover { background: rgba(163, 19, 30, .22) !important; }
+td:nth-child(2) { font-size: 1.22rem; font-weight: 700; }
+.badge { background: transparent; color: var(--amber); border: 1px solid var(--amber); border-radius: 2px; font-family: "Bebas Neue", sans-serif; letter-spacing: .1em; }
+.text-muted, .empty { color: var(--dim) !important; font-style: italic; }
+
+/* Kartu masuk sebagai tiket */
+.auth-body { position: relative; }
+.auth-card, .form-card, .card { position: relative; z-index: 1; background: var(--bone) !important; color: #1a1208 !important; border: 0; border-radius: 4px; box-shadow: 0 40px 80px -30px #000; -webkit-mask: radial-gradient(circle 15px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 15px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 15px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 15px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat; }
+.auth-card h1, .auth-card h2, .form-card h1, .form-card h2, .card h1, .card h2 { color: #1a1208; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1; }
+.auth-card .subtitle, .form-card .subtitle { color: #6d5d4f; }
+label { color: #1a1208; font-family: "Bebas Neue", sans-serif; letter-spacing: .1em; font-weight: 400; font-size: 1.04rem; }
+input, select, textarea { background: transparent !important; color: #1a1208 !important; border: 0 !important; border-bottom: 2px solid #1a1208 !important; border-radius: 0 !important; font-family: "Playfair Display", serif; box-shadow: none !important; }
+input:focus, select:focus, textarea:focus { outline: 0; border-color: var(--velvet) !important; }
+select option { color: #1a1208; }
+.auth-hint { background: transparent !important; border: 1px dashed #6d5d4f !important; color: #6d5d4f !important; border-radius: 2px; }
+.alert.error { background: var(--velvet); color: var(--bone); border: 0; border-radius: 2px; }
+.alert.success { background: #2f6b45; color: var(--bone); border: 0; border-radius: 2px; }
+
+.dt-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 12px; }
+.dt-bar input { flex: 1; min-width: 200px; min-height: 44px; padding: 8px 2px; background: transparent !important; color: var(--bone) !important; border-bottom: 1px solid var(--hair) !important; }
+.dt-bar button { min-height: 42px; padding: 8px 18px; border: 0; background: var(--amber); color: #1a1208; font: 400 1.08rem "Bebas Neue", sans-serif; letter-spacing: .08em; cursor: pointer; }
+.dt-count { font-style: italic; color: var(--dim); }
+
+.del-form { display: inline; margin: 0; padding: 0; background: none; box-shadow: none; }

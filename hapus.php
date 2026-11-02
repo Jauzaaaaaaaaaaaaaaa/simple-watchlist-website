@@ -1,8 +1,9 @@
 <?php
 require 'auth.php';
+require_post_csrf();
 require 'koneksi.php';
 
-$id = (int)($_GET['id'] ?? 0);
+$id = (int)($_POST['id'] ?? 0);
 mysqli_query($conn, "DELETE FROM movies WHERE id = $id");
 
 header('Location: index.php');

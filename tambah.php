@@ -11,6 +11,11 @@ $platforms = mysqli_query($conn, 'SELECT id, nama_platform FROM platforms ORDER 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Watchlist</title>
     <link rel="stylesheet" href="assets/style.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="atelier/atelier.css">
+<link rel="stylesheet" href="atelier/theme.css">
+<script src="atelier/theme.js"></script>
+<script src="atelier/atelier.js"></script>
 </head>
 <body class="platform-form-page">
     <main class="platform-form-wrapper">

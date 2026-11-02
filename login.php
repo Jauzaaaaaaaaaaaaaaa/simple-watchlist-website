@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+require_once __DIR__ . '/security.php';
 
 if (isset($_SESSION['user_id'])) {
     header('Location: index.php');
@@ -18,6 +16,11 @@ $success = $_GET['success'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Watchlist UJK</title>
     <link rel="stylesheet" href="assets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="atelier/atelier.css">
+<link rel="stylesheet" href="atelier/theme.css">
+<script src="atelier/theme.js"></script>
+<script src="atelier/atelier.js"></script>
 </head>
 <body class="auth-body">
     <div class="auth-card">
@@ -33,6 +36,7 @@ $success = $_GET['success'] ?? '';
         <?php endif; ?>
 
         <form action="proses_login.php" method="POST" class="form-grid">
+            <?php echo csrf_field(); ?>
             <div>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Masukkan email" required>
@@ -43,12 +47,6 @@ $success = $_GET['success'] ?? '';
             </div>
             <button type="submit" class="btn primary full">Login</button>
         </form>
-
-        <div class="auth-hint">
-            <strong>Akun default:</strong><br>
-            Email: admin@gmail.com<br>
-            Password: admin123
-        </div>
     </div>
 </body>
 </html>
